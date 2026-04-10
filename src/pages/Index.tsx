@@ -193,10 +193,10 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-neon-500 flex items-center justify-center">
-            <Icon name="FileText" size={16} className="text-background" />
+          <img src="https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png" alt="Логотип" className="h-10 w-auto" />
+          <div className="flex flex-col leading-tight">
+            <span className="text-xs text-muted-foreground">Юруслуги для Бизнеса и не только</span>
           </div>
-          <span className="font-display text-lg font-semibold tracking-wide">ДОКУМЕНТПРО</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#library" className="hover:text-foreground transition-colors">Шаблоны</a>
@@ -266,22 +266,7 @@ export default function Index() {
           <div className={`relative ${heroSection.inView ? "animate-float" : "opacity-0"}`} style={{ animationDelay: "0.3s" }}>
             <div className="relative rounded-2xl overflow-hidden border border-neon-500/20 shadow-2xl">
               <img src={HERO_IMAGE} alt="Юридические документы" className="w-full h-[460px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
-
-              {/* Логотип поверх изображения */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-2xl border border-white/60">
-                  <img
-                    src="https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png"
-                    alt="Логотип АОЕ"
-                    className="h-28 w-auto"
-                  />
-                </div>
-                <div className="bg-background/80 backdrop-blur-sm rounded-xl px-5 py-2 border border-neon-500/30">
-                  <span className="text-sm font-medium text-foreground">Юруслуги для Бизнеса и не только</span>
-                </div>
-              </div>
-
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 bg-card/90 backdrop-blur-sm border border-border rounded-xl p-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-neon-500 flex items-center justify-center flex-shrink-0">
@@ -495,15 +480,80 @@ export default function Index() {
       <section className="py-20 bg-secondary/20">
         <div ref={casesSection.ref} className="container">
           <div className="grid md:grid-cols-3 gap-6">
-            {["Интересное", "Видеосоветы", "Новости"].map((label, i) => (
-              <div
-                key={i}
-                className={`bg-card border border-border rounded-2xl p-6 min-h-[200px] flex items-center justify-center card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <span className="font-display text-xl font-bold uppercase tracking-wide text-muted-foreground/40">{label}</span>
+
+            {/* Интересное */}
+            <div className={`bg-card border border-border rounded-2xl p-6 card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "0s" }}>
+              <div className="flex items-center gap-2 mb-5">
+                <Icon name="Lightbulb" size={18} className="text-neon-500" />
+                <span className="font-display text-lg font-bold uppercase tracking-wide">Интересное</span>
               </div>
-            ))}
+              <div className="space-y-4">
+                {[
+                  { icon: "FileText", text: "Как работает закон о защите прав потребителей: 5 фактов, которые вы не знали", date: "8 апр" },
+                  { icon: "Scale", text: "Почему большинство долговых споров решается без суда", date: "5 апр" },
+                  { icon: "AlertCircle", text: "ЖКХ завысило счёт: что делать и куда жаловаться", date: "1 апр" },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3 p-3 rounded-xl hover:bg-secondary/40 transition-colors cursor-pointer">
+                    <div className="w-8 h-8 rounded-lg bg-neon-500/15 flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon as AnyIcon} size={14} className="text-neon-500" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-foreground leading-snug">{item.text}</p>
+                      <span className="text-xs text-muted-foreground mt-1 block">{item.date}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Видеосоветы */}
+            <div className={`bg-card border border-border rounded-2xl p-6 card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "0.1s" }}>
+              <div className="flex items-center gap-2 mb-5">
+                <Icon name="PlayCircle" size={18} className="text-neon-500" />
+                <span className="font-display text-lg font-bold uppercase tracking-wide">Видеосоветы</span>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { title: "Как правильно написать претензию: пошагово", duration: "4:32" },
+                  { title: "Долг не возвращают — алгоритм действий", duration: "6:15" },
+                  { title: "Судебный приказ по ЖКХ: отменяем за 10 минут", duration: "5:48" },
+                ].map((video, i) => (
+                  <div key={i} className="flex gap-3 p-3 rounded-xl hover:bg-secondary/40 transition-colors cursor-pointer group">
+                    <div className="w-16 h-12 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 relative overflow-hidden border border-border">
+                      <Icon name="Play" size={18} className="text-neon-500 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm text-foreground leading-snug line-clamp-2">{video.title}</p>
+                      <span className="text-xs text-neon-500 mt-1 block">{video.duration}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Новости */}
+            <div className={`bg-card border border-border rounded-2xl p-6 card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
+              <div className="flex items-center gap-2 mb-5">
+                <Icon name="Newspaper" size={18} className="text-neon-500" />
+                <span className="font-display text-lg font-bold uppercase tracking-wide">Новости</span>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { tag: "ЖКХ", text: "С мая 2024 года изменился порядок начисления пеней за долги по коммунальным услугам", date: "9 апр" },
+                  { tag: "Труд", text: "Роструд усилил контроль за выплатой зарплат: работодателей ждут внеплановые проверки", date: "6 апр" },
+                  { tag: "Алименты", text: "Упрощён порядок взыскания алиментов через судебный приказ: новые сроки рассмотрения", date: "2 апр" },
+                ].map((news, i) => (
+                  <div key={i} className="p-3 rounded-xl hover:bg-secondary/40 transition-colors cursor-pointer">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-xs bg-neon-500/15 text-neon-500 font-semibold px-2 py-0.5 rounded-full">{news.tag}</span>
+                      <span className="text-xs text-muted-foreground">{news.date}</span>
+                    </div>
+                    <p className="text-sm text-foreground leading-snug">{news.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -637,10 +687,8 @@ export default function Index() {
       <footer className="border-t border-border py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-neon-500 flex items-center justify-center">
-              <Icon name="FileText" size={14} className="text-background" />
-            </div>
-            <span className="font-display text-base font-semibold tracking-wide">ДОКУМЕНТПРО</span>
+            <img src="https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png" alt="Логотип" className="h-8 w-auto" />
+            <span className="text-xs text-muted-foreground">Юруслуги для Бизнеса и не только</span>
           </div>
           <p className="text-muted-foreground text-xs text-center">
             © 2024 ДокументПро. Шаблоны носят информационный характер и не являются юридической консультацией.
