@@ -193,10 +193,10 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="flex items-center gap-2">
-          <img src="https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png" alt="Логотип" className="h-10 w-auto" />
-          <div className="flex flex-col leading-tight">
-            <span className="text-xs text-muted-foreground">Юруслуги для Бизнеса и не только</span>
+          <div className="w-8 h-8 rounded-lg bg-neon-500 flex items-center justify-center">
+            <Icon name="FileText" size={16} className="text-background" />
           </div>
+          <span className="font-display text-lg font-semibold tracking-wide">ДОКУМЕНТПРО</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#library" className="hover:text-foreground transition-colors">Шаблоны</a>
@@ -687,8 +687,10 @@ export default function Index() {
       <footer className="border-t border-border py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <img src="https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png" alt="Логотип" className="h-8 w-auto" />
-            <span className="text-xs text-muted-foreground">Юруслуги для Бизнеса и не только</span>
+            <div className="w-7 h-7 rounded-lg bg-neon-500 flex items-center justify-center">
+              <Icon name="FileText" size={14} className="text-background" />
+            </div>
+            <span className="font-display text-base font-semibold tracking-wide">ДОКУМЕНТПРО</span>
           </div>
           <p className="text-muted-foreground text-xs text-center">
             © 2024 ДокументПро. Шаблоны носят информационный характер и не являются юридической консультацией.
