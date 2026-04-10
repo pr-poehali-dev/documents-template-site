@@ -329,10 +329,10 @@ export default function Index() {
               <div className="text-neon-500 font-semibold text-sm uppercase tracking-widest mb-3">Решение</div>
               <h2 className="font-display text-4xl font-bold uppercase tracking-wide mb-6">
                 Действуйте как юрист.<br />
-                <span className="gradient-text">Получайте деньги быстрее.</span>
+                <span className="gradient-text">Не тратьте время, все в Ваших руках.</span>
               </h2>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Мы продаём не просто документ — а алгоритм давления, который работает. Оппоненты знают: за этим шаблоном стоит закон.
+                Мы продаём не просто документ — а алгоритм, который работает. Оппоненты знают: за этим шаблоном стоит закон.
               </p>
 
               <div className="space-y-4">
