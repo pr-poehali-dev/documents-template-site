@@ -479,36 +479,14 @@ export default function Index() {
       {/* CASES */}
       <section className="py-20 bg-secondary/20">
         <div ref={casesSection.ref} className="container">
-          <div className={`text-center mb-12 ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`}>
-            <div className="text-neon-500 font-semibold text-sm uppercase tracking-widest mb-3">Результаты</div>
-            <h2 className="font-display text-4xl font-bold uppercase tracking-wide">Реальные истории</h2>
-          </div>
-
           <div className="grid md:grid-cols-3 gap-6">
-            {cases.map((c, i) => (
+            {["Интересное", "Видеосоветы", "Новости"].map((label, i) => (
               <div
                 key={i}
-                className={`bg-card border border-border rounded-2xl p-6 card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`}
+                className={`bg-card border border-border rounded-2xl p-6 min-h-[200px] flex items-center justify-center card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`}
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className="font-display text-4xl font-bold gradient-text mb-2">{c.amount}</div>
-                <div className="font-semibold text-foreground mb-4">{c.title}</div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5">«{c.story}»</p>
-                <div className="flex items-center gap-4 pt-4 border-t border-border">
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <Icon name="Clock" size={12} />
-                    {c.days}
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <Icon name="MapPin" size={12} />
-                    {c.city}
-                  </div>
-                  <div className="ml-auto flex">
-                    {[1,2,3,4,5].map((s) => (
-                      <Icon key={s} name="Star" size={12} className="text-neon-500" />
-                    ))}
-                  </div>
-                </div>
+                <span className="font-display text-xl font-bold uppercase tracking-wide text-muted-foreground/40">{label}</span>
               </div>
             ))}
           </div>
