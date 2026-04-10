@@ -11,6 +11,8 @@ const situations = [
   { id: "goods", label: "Товары и услуги", icon: "ShoppingBag" },
   { id: "debt", label: "Долги", icon: "Wallet" },
   { id: "work", label: "Работодатель", icon: "Briefcase" },
+  { id: "contract", label: "Договоры", icon: "FileCheck" },
+  { id: "alimony", label: "Алименты", icon: "Heart" },
 ];
 
 const templates = [
@@ -34,7 +36,7 @@ const templates = [
     success: "76%",
     tag: "Без суда",
     tagColor: "bg-emerald-600",
-    docs: ["Претензия", "Чек-лист", "Исковое"],
+    docs: ["Претензия", "Чек-лист"],
   },
   {
     id: 3,
@@ -57,6 +59,28 @@ const templates = [
     tag: "ЖКХ",
     tagColor: "bg-emerald-600",
     docs: ["Возражение", "Чек-лист", "Инструкция"],
+  },
+  {
+    id: 5,
+    category: "contract",
+    title: "Претензия по нарушению условий договора",
+    desc: "Заставить контрагента исполнить обязательства или вернуть деньги по договору",
+    time: "12 мин",
+    success: "78%",
+    tag: "Договор",
+    tagColor: "bg-violet-600",
+    docs: ["Претензия", "Чек-лист", "Инструкция"],
+  },
+  {
+    id: 6,
+    category: "alimony",
+    title: "Алименты через судебный приказ",
+    desc: "Получить алименты быстро и без суда — через судебный приказ мирового судьи",
+    time: "15 мин",
+    success: "91%",
+    tag: "Быстро",
+    tagColor: "bg-neon-500",
+    docs: ["Заявление", "Чек-лист", "Инструкция"],
   },
 ];
 
@@ -407,12 +431,7 @@ export default function Index() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <div className="flex items-center gap-1.5 text-sm">
-                    <Icon name="TrendingUp" size={14} className="text-neon-500" />
-                    <span className="text-neon-500 font-bold">{t.success}</span>
-                    <span className="text-muted-foreground">успеха</span>
-                  </div>
+                <div className="flex items-center justify-end pt-4 border-t border-border">
                   <button className="flex items-center gap-1.5 bg-neon-500 hover:bg-neon-600 text-background text-sm font-semibold px-4 py-2 rounded-lg transition-all hover:scale-105">
                     Получить
                     <Icon name="ArrowRight" size={14} />
