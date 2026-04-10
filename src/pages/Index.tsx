@@ -339,7 +339,7 @@ export default function Index() {
                 {[
                   { icon: "FileText", title: "Готовые шаблоны документов", desc: "Юридически выверенные, под вашу ситуацию" },
                   { icon: "MapPin", title: "Пошаговая инструкция (чек-лист)", desc: "Куда идти, что говорить, в какие сроки" },
-                  { icon: "Swords", title: "Интересные факты и примеры", desc: "Как заставить вторую сторону заплатить" },
+                  { icon: "Swords", title: "Интересные факты и примеры", desc: "Реальные случаи и примеры из практики, которые помогут разобраться в ситуации" },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 p-4 rounded-xl bg-secondary/40 border border-border hover:border-neon-500/30 transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-neon-500/20 flex items-center justify-center flex-shrink-0">
@@ -357,8 +357,7 @@ export default function Index() {
             <div className="bg-card border border-border rounded-2xl p-8 space-y-4">
               <div className="font-display text-xl font-bold uppercase tracking-wide mb-6">Что внутри пакета</div>
               {[
-                { icon: "FileSignature", label: "Претензия под вашу ситуацию", note: "Уже с правильными ссылками на законы" },
-                { icon: "Scale", label: "Исковое заявление", note: "Готово к подаче, если не ответят" },
+                { icon: "FileSignature", label: "Документ, под Вашу ситуацию", note: "Уже с правильными ссылками на законы" },
                 { icon: "ListChecks", label: "Чек-лист действий", note: "Шаг за шагом, без пропусков" },
                 { icon: "BookOpen", label: "Примеры заполнения", note: "Реальные образцы с пояснениями" },
               ].map((item, i) => (
