@@ -2,6 +2,8 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { plans, faqs } from "./data";
 
+const LOGO = "https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png";
+
 interface PricingSectionProps {
   pricingRef: React.RefObject<HTMLDivElement>;
   pricingInView: boolean;
@@ -142,11 +144,11 @@ export default function PricingSection({ pricingRef, pricingInView, faqRef, faqI
       {/* FOOTER */}
       <footer className="border-t border-border py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-neon-500 flex items-center justify-center">
-              <Icon name="FileText" size={14} className="text-background" />
+          <div className="flex items-center gap-3">
+            <div className="bg-white rounded-xl px-3 py-1.5 shadow-lg shadow-neon-500/20 ring-2 ring-neon-500/40">
+              <img src={LOGO} alt="Логотип" className="h-8 w-auto" />
             </div>
-            <span className="font-display text-base font-semibold tracking-wide">ДОКУМЕНТПРО</span>
+            <span className="text-xs text-muted-foreground hidden sm:block">Юруслуги для Бизнеса и не только</span>
           </div>
           <p className="text-muted-foreground text-xs text-center">
             © 2024 ДокументПро. Шаблоны носят информационный характер и не являются юридической консультацией.

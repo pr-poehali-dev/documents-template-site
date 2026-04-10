@@ -1,5 +1,7 @@
 import Icon from "@/components/ui/icon";
-import { HERO_IMAGE } from "./data";
+
+const LOGO = "https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png";
+const NEW_HERO_IMAGE = "https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/files/16bc4ddd-fd28-4838-b64c-b97bda384029.jpg";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyIcon = any;
@@ -18,11 +20,11 @@ export default function HeroSection({ heroRef, heroInView, painRef, painInView, 
     <>
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-background/80 border-b border-border">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-neon-500 flex items-center justify-center">
-            <Icon name="FileText" size={16} className="text-background" />
+        <div className="flex items-center gap-3">
+          <div className="bg-white rounded-xl px-3 py-1.5 shadow-lg shadow-neon-500/20 ring-2 ring-neon-500/40">
+            <img src={LOGO} alt="Логотип" className="h-9 w-auto" />
           </div>
-          <span className="font-display text-lg font-semibold tracking-wide">ДОКУМЕНТПРО</span>
+          <span className="text-xs text-muted-foreground hidden sm:block">Юруслуги для Бизнеса и не только</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#library" className="hover:text-foreground transition-colors">Шаблоны</a>
@@ -90,19 +92,18 @@ export default function HeroSection({ heroRef, heroInView, painRef, painInView, 
           </div>
 
           <div className={`relative ${heroInView ? "animate-float" : "opacity-0"}`} style={{ animationDelay: "0.3s" }}>
-            <div className="relative rounded-2xl overflow-hidden border border-neon-500/20 shadow-2xl">
-              <img src={HERO_IMAGE} alt="Юридические документы" className="w-full h-[460px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 bg-card/90 backdrop-blur-sm border border-border rounded-xl p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-neon-500 flex items-center justify-center flex-shrink-0">
-                    <Icon name="CheckCircle" size={20} className="text-background" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">Претензия отправлена</div>
-                    <div className="text-xs text-muted-foreground">Должник получил документ • 2 минуты назад</div>
-                  </div>
-                  <div className="ml-auto text-neon-500 font-display text-lg font-bold">+85 000 ₽</div>
+            {/* Glow behind image */}
+            <div className="absolute -inset-4 rounded-3xl opacity-40 blur-2xl" style={{ background: "radial-gradient(circle, rgba(255,140,0,0.5) 0%, transparent 70%)" }} />
+            <div className="relative rounded-2xl overflow-hidden border-2 border-neon-500/40 shadow-2xl neon-glow">
+              <img src={NEW_HERO_IMAGE} alt="Юридические документы" className="w-full h-[460px] object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
+              {/* Логотип поверх картинки */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-2xl ring-4 ring-neon-500/50">
+                  <img src={LOGO} alt="Логотип АОЕ" className="h-24 w-auto" />
+                </div>
+                <div className="bg-background/85 backdrop-blur-sm rounded-xl px-5 py-2 border border-neon-500/50 neon-glow">
+                  <span className="text-sm font-semibold text-foreground">Юруслуги для Бизнеса и не только</span>
                 </div>
               </div>
             </div>
