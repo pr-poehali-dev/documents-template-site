@@ -480,15 +480,80 @@ export default function Index() {
       <section className="py-20 bg-secondary/20">
         <div ref={casesSection.ref} className="container">
           <div className="grid md:grid-cols-3 gap-6">
-            {["Интересное", "Видеосоветы", "Новости"].map((label, i) => (
-              <div
-                key={i}
-                className={`bg-card border border-border rounded-2xl p-6 min-h-[200px] flex items-center justify-center card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <span className="font-display text-xl font-bold uppercase tracking-wide text-muted-foreground/40">{label}</span>
+
+            {/* Интересное */}
+            <div className={`bg-card border border-border rounded-2xl p-6 card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "0s" }}>
+              <div className="flex items-center gap-2 mb-5">
+                <Icon name="Lightbulb" size={18} className="text-neon-500" />
+                <span className="font-display text-lg font-bold uppercase tracking-wide">Интересное</span>
               </div>
-            ))}
+              <div className="space-y-4">
+                {[
+                  { icon: "FileText", text: "Как работает закон о защите прав потребителей: 5 фактов, которые вы не знали", date: "8 апр" },
+                  { icon: "Scale", text: "Почему большинство долговых споров решается без суда", date: "5 апр" },
+                  { icon: "AlertCircle", text: "ЖКХ завысило счёт: что делать и куда жаловаться", date: "1 апр" },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3 p-3 rounded-xl hover:bg-secondary/40 transition-colors cursor-pointer">
+                    <div className="w-8 h-8 rounded-lg bg-neon-500/15 flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon as AnyIcon} size={14} className="text-neon-500" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-foreground leading-snug">{item.text}</p>
+                      <span className="text-xs text-muted-foreground mt-1 block">{item.date}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Видеосоветы */}
+            <div className={`bg-card border border-border rounded-2xl p-6 card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "0.1s" }}>
+              <div className="flex items-center gap-2 mb-5">
+                <Icon name="PlayCircle" size={18} className="text-neon-500" />
+                <span className="font-display text-lg font-bold uppercase tracking-wide">Видеосоветы</span>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { title: "Как правильно написать претензию: пошагово", duration: "4:32" },
+                  { title: "Долг не возвращают — алгоритм действий", duration: "6:15" },
+                  { title: "Судебный приказ по ЖКХ: отменяем за 10 минут", duration: "5:48" },
+                ].map((video, i) => (
+                  <div key={i} className="flex gap-3 p-3 rounded-xl hover:bg-secondary/40 transition-colors cursor-pointer group">
+                    <div className="w-16 h-12 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 relative overflow-hidden border border-border">
+                      <Icon name="Play" size={18} className="text-neon-500 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm text-foreground leading-snug line-clamp-2">{video.title}</p>
+                      <span className="text-xs text-neon-500 mt-1 block">{video.duration}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Новости */}
+            <div className={`bg-card border border-border rounded-2xl p-6 card-hover ${casesSection.inView ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
+              <div className="flex items-center gap-2 mb-5">
+                <Icon name="Newspaper" size={18} className="text-neon-500" />
+                <span className="font-display text-lg font-bold uppercase tracking-wide">Новости</span>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { tag: "ЖКХ", text: "С мая 2024 года изменился порядок начисления пеней за долги по коммунальным услугам", date: "9 апр" },
+                  { tag: "Труд", text: "Роструд усилил контроль за выплатой зарплат: работодателей ждут внеплановые проверки", date: "6 апр" },
+                  { tag: "Алименты", text: "Упрощён порядок взыскания алиментов через судебный приказ: новые сроки рассмотрения", date: "2 апр" },
+                ].map((news, i) => (
+                  <div key={i} className="p-3 rounded-xl hover:bg-secondary/40 transition-colors cursor-pointer">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-xs bg-neon-500/15 text-neon-500 font-semibold px-2 py-0.5 rounded-full">{news.tag}</span>
+                      <span className="text-xs text-muted-foreground">{news.date}</span>
+                    </div>
+                    <p className="text-sm text-foreground leading-snug">{news.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
