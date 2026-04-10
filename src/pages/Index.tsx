@@ -338,8 +338,8 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { icon: "FileText", title: "Готовые шаблоны документов", desc: "Юридически выверенные, под вашу ситуацию" },
-                  { icon: "MapPin", title: "Пошаговая инструкция", desc: "Куда идти, что говорить, в какие сроки" },
-                  { icon: "Swords", title: "Сценарий давления", desc: "Как заставить вторую сторону заплатить" },
+                  { icon: "MapPin", title: "Пошаговая инструкция (чек-лист)", desc: "Куда идти, что говорить, в какие сроки" },
+                  { icon: "Swords", title: "Интересные факты и примеры", desc: "Как заставить вторую сторону заплатить" },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 p-4 rounded-xl bg-secondary/40 border border-border hover:border-neon-500/30 transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-neon-500/20 flex items-center justify-center flex-shrink-0">
