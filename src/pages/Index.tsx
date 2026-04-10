@@ -383,7 +383,7 @@ export default function Index() {
         <div ref={librarySection.ref} className="container">
           <div className={`text-center mb-10 ${librarySection.inView ? "animate-fade-in-up" : "opacity-0"}`}>
             <div className="text-neon-500 font-semibold text-sm uppercase tracking-widest mb-3">Библиотека шаблонов</div>
-            <h2 className="font-display text-4xl font-bold uppercase tracking-wide mb-4">Найдите свою ситуацию</h2>
+            <h2 className="font-display text-4xl font-bold uppercase tracking-wide mb-4">Решение Вашей проблемы здесь!</h2>
             <p className="text-muted-foreground text-lg">Более 20 готовых пакетов документов</p>
           </div>
 
