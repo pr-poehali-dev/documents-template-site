@@ -266,7 +266,22 @@ export default function Index() {
           <div className={`relative ${heroSection.inView ? "animate-float" : "opacity-0"}`} style={{ animationDelay: "0.3s" }}>
             <div className="relative rounded-2xl overflow-hidden border border-neon-500/20 shadow-2xl">
               <img src={HERO_IMAGE} alt="Юридические документы" className="w-full h-[460px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent" />
+
+              {/* Логотип поверх изображения */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-2xl border border-white/60">
+                  <img
+                    src="https://cdn.poehali.dev/projects/f070a388-11df-4350-8450-a0357c2e74f0/bucket/0544d361-9b0d-46d9-90eb-3b71f4961365.png"
+                    alt="Логотип АОЕ"
+                    className="h-28 w-auto"
+                  />
+                </div>
+                <div className="bg-background/80 backdrop-blur-sm rounded-xl px-5 py-2 border border-neon-500/30">
+                  <span className="text-sm font-medium text-foreground">Юруслуги для Бизнеса и не только</span>
+                </div>
+              </div>
+
               <div className="absolute bottom-6 left-6 right-6 bg-card/90 backdrop-blur-sm border border-border rounded-xl p-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-neon-500 flex items-center justify-center flex-shrink-0">
