@@ -226,11 +226,11 @@ export default function Index() {
             </div>
 
             <h1 className="font-display text-5xl lg:text-6xl font-bold leading-tight uppercase tracking-wide">
-              Вернём ваши деньги
+              ЖКХ-долг или бизнес-договор?
               <br />
-              <span className="gradient-text neon-text">без суда</span>
+              <span className="gradient-text neon-text">Реши проблему</span>
               <br />
-              и нервов
+              сам в пару кликов!
             </h1>
 
             <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">
